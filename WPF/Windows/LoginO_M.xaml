@@ -1,0 +1,84 @@
+﻿<Window x:Class="CourseProjectWPF.Windows.LoginShipper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseProjectWPF.Windows" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="LoginShipper" Height="450" Width="380" 
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ButtonTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FFF9E3AE" Offset="0.0" />
+                        <GradientStop Color="#FFED7899" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Content="EXIT" Margin="314,10,10,418.6" x:Name="btnCancel" Click="Cancel_Click" Background="#FFB968C8"/>
+            </Border>
+
+
+            <StackPanel VerticalAlignment="Center" Grid.Row="0">
+                <Image Source="../Images/image2.png" Margin="10" Width="100" Height="100" />
+                <TextBlock x:Name="___TextBlock___Shipper_Database_" Text="Shipper Database" 
+                           FontWeight="Light" 
+                           FontSize="22" 
+                           FontFamily="Helvetica"
+                           HorizontalAlignment="Center"
+                           Foreground="White" Margin="109,0,108,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBox FontFamily="Helvetica" 
+                           FontWeight="Light" 
+                           FontSize="20"
+                           Foreground="White" 
+                           Background="#FFACE3FF"
+                           Text="{Binding Username}"
+                           Opacity="0.5"
+                           Width="240"
+                           Height="25"
+                           Margin="70, 0, 0, 0"/>
+                </StackPanel>
+                <Border Width="235" Height="2" Background="White" Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0, 20, 0, 0">
+                    <PasswordBox FontFamily="Helvetica" 
+                           FontWeight="Light" 
+                           FontSize="20"
+                           Foreground="White" 
+                           Background="#FFACE3FF"
+                           Opacity="0.5"
+                           Width="240"
+                           Height="25"
+                           Margin="70, 0, 0, 0" PasswordChanged="PasswordBox_PasswordChanged"/>
+                </StackPanel>
+                <Border Width="235" Height="2" Background="White" Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0" HorizontalAlignment="Center">
+                    <Button Width="100" Height="40" Content="Login" x:Name="btnLogin" Click="Login_Click" Background="#FF72CAAF"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
+
